@@ -1,6 +1,5 @@
 module.exports = {
-  extends: ['airbnb', 'prettier', 'prettier/react'
-  ],
+  extends: ['airbnb', 'prettier', 'prettier/react'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2020,
@@ -20,8 +19,7 @@ module.exports = {
     'no-debugger': 0,
     'no-alert': 0,
     'no-await-in-loop': 0,
-    'no-return-assign': ['error', 'except-parens'
-    ],
+    'no-return-assign': ['error', 'except-parens'],
     'no-restricted-syntax': [
       2,
       'ForInStatement',
@@ -41,9 +39,7 @@ module.exports = {
         destructuring: 'all',
       },
     ],
-    'arrow-body-style': [
-      2, 'as-needed'
-    ],
+    'arrow-body-style': [2, 'as-needed'],
     'no-unused-expressions': [
       2,
       {
@@ -73,18 +69,17 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'react/no-unescaped-entities': 0,
     'jsx-a11y/accessible-emoji': 0,
-    "jsx-a11y/label-has-associated-control": [
-      "error",
+    'jsx-a11y/label-has-associated-control': [
+      'error',
       {
-        "assert": "either"
-      }
+        assert: 'either',
+      },
     ],
     'react/require-default-props': 0,
     'react/jsx-filename-extension': [
       1,
       {
-        extensions: ['.js', '.jsx'
-        ],
+        extensions: ['.js', '.jsx'],
       },
     ],
     radix: 0,
@@ -92,8 +87,7 @@ module.exports = {
       2,
       {
         hoist: 'all',
-        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'
-        ],
+        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
       },
     ],
     quotes: [
@@ -119,13 +113,11 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': [
       'warn',
       {
-        aspects: ['invalidHref'
-        ],
+        aspects: ['invalidHref'],
       },
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
   },
-  plugins: ['html', 'prettier', 'react-hooks'
-  ],
+  plugins: ['html', 'prettier', 'react-hooks'],
 };
