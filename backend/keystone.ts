@@ -8,6 +8,7 @@ import {
 import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
+import { insertSeedData } from './seed-data';
 
 const databaseURL = process.env.DATABASE_URL;
 
@@ -36,7 +37,10 @@ export default withAuth(
     db: {
       adapter: 'mongoose',
       url: databaseURL,
-      // TODO add data seed
+      async onConnect(keystone) {
+        if (process.argv.includes('--seed-data'))
+          await insertSeedData(keystone);
+      },
     },
     lists: createSchema({
       // schema items go here
