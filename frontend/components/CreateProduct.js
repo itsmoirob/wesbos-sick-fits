@@ -10,11 +10,22 @@ export default function CreateProduct() {
   });
 
   return (
-    <Form>
+    <Form
+      onSubmit={(e) => {
+        e.preventDefault();
+        console.log(inputs);
+      }}
+    >
       <fieldset>
         <label htmlFor="image">
           Image
-          <input type="text" id="image" name="image" onChange={handleChange} />
+          <input
+            required
+            type="text"
+            id="image"
+            name="image"
+            onChange={handleChange}
+          />
         </label>
 
         <label htmlFor="name">
