@@ -43,14 +43,13 @@ export default function CreateProduct() {
 
         <label htmlFor="description">
           Description
-          <input
-            type="text"
+          <textarea
             id="description"
             name="description"
             placeholder="description"
             value={inputs.description}
             onChange={handleChange}
-          />
+          ></textarea>
         </label>
 
         <button type="submit">+ Add Product</button>
