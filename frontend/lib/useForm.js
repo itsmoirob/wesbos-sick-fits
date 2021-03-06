@@ -8,7 +8,7 @@ export default function useForm(intial = {}) {
 
     let modValue = value;
     if (type === 'number') modValue = parseInt(value);
-    if (type === 'file') modValue[0] = e.target.files;
+    if (type === 'file') [modValue] = e.target.files;
 
     setInputs({
       // copy existing state
