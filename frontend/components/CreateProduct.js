@@ -42,9 +42,12 @@ export default function CreateProduct() {
     <Form
       onSubmit={async (e) => {
         e.preventDefault();
-        console.log(inputs);
+
         // submit the input to backend
-        const res = await createProduct();
+        await createProduct();
+
+        // clear form
+        clearForm();
       }}
     >
       <DisplayError error={error} />
