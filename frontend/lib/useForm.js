@@ -16,7 +16,6 @@ export default function useForm(intial = {}) {
       // add/update new state
       [name]: modValue,
     });
-    console.log(inputs);
   }
 
   function resetForm() {
