@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/client';
+import Router from 'next/router';
 import useForm from '../lib/useForm';
 import Form from './styles/Form';
 import DisplayError from './ErrorMessage';
@@ -34,13 +35,13 @@ export default function CreateProduct() {
     description: 'One sleepy head Arthur',
   });
 
-  const [
-    createProduct,
-    { data, error, loading },
-  ] = useMutation(CREATE_PRODUCT_MUTATION, {
-    variables: inputs,
-    refetchQueries: [{ query: ALL_PRODUCTS_QUERY }],
-  });
+  const [createProduct, { data, error, loading }] = useMutation(
+    CREATE_PRODUCT_MUTATION,
+    {
+      variables: inputs,
+      refetchQueries: [{ query: ALL_PRODUCTS_QUERY }],
+    }
+  );
 
   return (
     <Form
@@ -52,6 +53,11 @@ export default function CreateProduct() {
 
         // clear form
         clearForm();
+
+        // go to products page
+        Router.push({
+          pathname: `/product/${data.createProduct.id}`,
+        });
       }}
     >
       <DisplayError error={error} />
