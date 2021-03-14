@@ -24,7 +24,7 @@ export default function Pagination({ page }) {
   if (paginationLoading) return 'Loading ...';
   if (paginationError) return <DisplayError error={error} />;
 
-  const { count: itemCount } = paginationData._allProductsMeta;
+  const itemCount = paginationData?._allProductsMeta?.count;
   const pageCount = Math.ceil(itemCount / perPage);
 
   return (
