@@ -85,7 +85,7 @@ export default function SignUp() {
           />
         </label>
 
-        <button tpye="submit">Sign in!</button>
+        <button tpye="submit">Sign up!</button>
       </fieldset>
     </Form>
   );
