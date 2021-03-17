@@ -21,7 +21,6 @@ export default function Nav() {
       {!user && (
         <>
           <Link href="/signin">Sign In</Link>
-          <Link href="/register">Register</Link>
         </>
       )}
     </NavStyles>
