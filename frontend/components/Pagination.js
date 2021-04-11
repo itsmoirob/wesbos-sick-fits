@@ -22,7 +22,7 @@ export default function Pagination({ page }) {
   } = useQuery(PAGINATION_QUERY);
 
   if (paginationLoading) return 'Loading ...';
-  if (paginationError) return <DisplayError error={error} />;
+  if (paginationError) return <DisplayError error={paginationError} />;
 
   const itemCount = paginationData?._allProductsMeta?.count;
   const pageCount = Math.ceil(itemCount / perPage);
