@@ -11,6 +11,7 @@ import { ProductImage } from './schemas/ProductImage';
 import { CartItem } from './schemas/CartItem';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
+import { extendGraphqlSchema } from './mutations';
 
 const databaseURL = process.env.DATABASE_URL;
 
@@ -50,12 +51,12 @@ export default withAuth(
       },
     },
     lists: createSchema({
-      // schema items go here
       User,
       Product,
       ProductImage,
       CartItem,
     }),
+    extendGraphqlSchema,
     ui: {
       isAccessAllowed: ({ session }) => {
         return !!session?.data;
